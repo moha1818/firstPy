@@ -1,5 +1,6 @@
 import requests
 import bs4
+import json
 
 #要抓取的目标页码地址
 url = 'http://gw-api.pinduoduo.com/api/router?type=pdd.order.information.get&order_sn=180820-069827298471542'
@@ -16,4 +17,10 @@ status_code = response.status_code
 #form = content.find_all(id='fm1')
 
 print(status_code)
+print(response.text)
+
+
+url = 'http://api.map.baidu.com/geocoding/v3/?address=宁波市{}&output=json&ak=ki10ALGLwC9NzO053yjcsu7oU1oyt5GA'.format('慈溪-慈溪市区-滨海五路,近滨海大道')
+
+response = requests.get(url)
 print(response.text)
